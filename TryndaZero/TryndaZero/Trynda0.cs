@@ -42,8 +42,9 @@ namespace Trynda0
         private static Item bilgewater, botrk, tiamat, hydra, Youmuu;
 
 
-
-
+        private static Item HealthPotion, HuntersPotion, Biscuit, CorruptPotion, RefillPotion;
+        
+        
 
 
 
@@ -92,6 +93,14 @@ namespace Trynda0
             Youmuu = new Item(3142, 800);
 
 
+
+
+
+            HealthPotion = new Item(2003, 0);
+            Biscuit = new Item(2010, 0);
+            CorruptPotion = new Item(2033, 0);
+            RefillPotion = new Item(2031, 0);
+            HuntersPotion = new Item(2032, 0);
 
 
 
@@ -169,6 +178,13 @@ namespace Trynda0
             ItemMenu.AddGroupLabel("LaneClear/JungleClear:");
             ItemMenu.Add("tialc", new CheckBox("Use Tiamat in Laneclear/JungleClear"));
             ItemMenu.Add("hydralc", new CheckBox("Use Hydra in Laneclear/JungleClear"));
+            ItemMenu.AddSeparator(50);
+            ItemMenu.Add("potion", new CheckBox("Auto Use Potion"));
+            ItemMenu.Add("potionhp", new Slider("Use Auto Potion when %HP <=", 50, 0, 100));
+
+
+
+
 
             DrawingsMenu = TryndaMenu.AddSubMenu("Drawings");
             DrawingsMenu.AddGroupLabel("Drawing Settings");
@@ -224,7 +240,7 @@ namespace Trynda0
             }
 
 
-
+            AutoPot();
 
 
 
@@ -408,6 +424,45 @@ namespace Trynda0
 
             }
         }
+
+
+
+        private static void AutoPot()
+        {
+            if (ItemMenu["potion"].Cast<CheckBox>().CurrentValue && !Player.Instance.IsInShopRange() && Player.Instance.HealthPercent <= ItemMenu["potionhp"].Cast<Slider>().CurrentValue && !(Player.Instance.HasBuff("RegenerationPotion") || Player.Instance.HasBuff("ItemCrystalFlaskJungle") || Player.Instance.HasBuff("ItemMiniRegenPotion") || Player.Instance.HasBuff("ItemCrystalFlask") || Player.Instance.HasBuff("ItemDarkCrystalFlask")))
+            {
+                {
+                    if (Item.HasItem(HealthPotion.Id) && Item.CanUseItem(HealthPotion.Id))
+                    {
+                        HealthPotion.Cast();
+                        return;
+                    }
+                    if (Item.HasItem(CorruptPotion.Id) && Item.CanUseItem(CorruptPotion.Id))
+                    {
+                        CorruptPotion.Cast();
+                        return;
+                    }
+                    if (Item.HasItem(Biscuit.Id) && Item.CanUseItem(Biscuit.Id))
+                    {
+                        Biscuit.Cast();
+                        return;
+                    }
+                    if (Item.HasItem(RefillPotion.Id) && Item.CanUseItem(RefillPotion.Id))
+                    {
+                        RefillPotion.Cast();
+                        return;
+                    }
+                    if (Item.HasItem(HuntersPotion.Id) && Item.CanUseItem(HuntersPotion.Id))
+                    {
+                        HuntersPotion.Cast();
+                        return;
+                    }
+                }
+            }
+                    
+                    
+                    
+         }
 
 
 
