@@ -160,10 +160,11 @@ namespace Trynda0
             ItemMenu.AddGroupLabel("Item Settings");
             ItemMenu.AddGroupLabel("Combo:");
             ItemMenu.Add("bilge", new CheckBox("Use Bilgewater Cutlass in Combo"));
-            ItemMenu.Add("botrk", new CheckBox("Use BotrK in Combo"));
+            ItemMenu.Add("youmuu", new CheckBox("Use Youmuu's in Combo"));
             ItemMenu.Add("tia", new CheckBox("Use Tiamat in Combo"));
             ItemMenu.Add("hydra", new CheckBox("Use Hydra in Combo"));
-            ItemMenu.Add("youmuu", new CheckBox("Use Youmuu's in Combo"));
+            ItemMenu.Add("botrk", new CheckBox("Use BotrK in Combo"));
+            ItemMenu.Add("bork", new Slider("%HP to use BotrK <=", 75, 0, 100));
             ItemMenu.AddSeparator();
             ItemMenu.AddGroupLabel("LaneClear/JungleClear:");
             ItemMenu.Add("tialc", new CheckBox("Use Tiamat in Laneclear/JungleClear"));
@@ -362,7 +363,7 @@ namespace Trynda0
             if (ComboMenu["W"].Cast<CheckBox>().CurrentValue)
             {
                 var Wcomboenemy = TargetSelector.GetTarget(W.Range, DamageType.Magical);
-                if (target.IsValidTarget(W.Range) && W.IsReady() && !Wcomboenemy.IsFacing(User))
+                if (target.IsValidTarget(W.Range) && W.IsReady() && !Wcomboenemy.IsFacing(Trynda))
                 {
                     W.Cast(target);
 
@@ -419,45 +420,29 @@ namespace Trynda0
 
         private static void Items()
         {
+            var itemen2 = TargetSelector.GetTarget(200, DamageType.Physical);
+            var itemen = TargetSelector.GetTarget(550, DamageType.Physical);
+            if (itemen != null)
+            {
 
-            var itemen = TargetSelector.GetTarget(W.Range, DamageType.Physical);
-            if (itemen == null)
-            {
-                return;
-            }
-            if (!itemen.IsValid || !itemen.IsZombie)
-            {
-                return;
-            }
-            if (ItemMenu["bilge"].Cast<CheckBox>().CurrentValue)
-            {
-                if (bilgewater.IsOwned() && bilgewater.IsReady() && bilgewater.IsInRange(itemen))
+                if (ItemMenu["botrk"].Cast<CheckBox>().CurrentValue && Item.HasItem(botrk.Id) && Item.CanUseItem(botrk.Id) && Player.Instance.HealthPercent <= ItemMenu["bork"].Cast<Slider>().CurrentValue)
                 {
-                    bilgewater.Cast(itemen);
+                    Item.UseItem(botrk.Id, itemen);
+                }
+                    if (ItemMenu["bilge"].Cast<CheckBox>().CurrentValue && Item.HasItem(bilgewater.Id) && Item.CanUseItem(bilgewater.Id))
+                {
+                    Item.UseItem(bilgewater.Id, itemen);
+                }
+                if (ItemMenu["tia"].Cast<CheckBox>().CurrentValue && Item.HasItem(tiamat.Id) && Item.CanUseItem(tiamat.Id))
+                {
+                    Item.UseItem(tiamat.Id, itemen2);
+                }
+                if (ItemMenu["hydra"].Cast<CheckBox>().CurrentValue && Item.HasItem(hydra.Id) && Item.CanUseItem(hydra.Id))
+                {
+                    Item.UseItem(hydra.Id, itemen2);
                 }
             }
-            if (ItemMenu["botrk"].Cast<CheckBox>().CurrentValue)
-            {
-                if (botrk.IsOwned() && botrk.IsReady() && botrk.IsInRange(itemen))
-                {
-                    botrk.Cast(itemen);
-                }
-            }
-            if (ItemMenu["tia"].Cast<CheckBox>().CurrentValue)
-            {
-                if (tiamat.IsOwned() && tiamat.IsReady() && tiamat.IsInRange(itemen))
-                {
-                    tiamat.Cast();
-                }
-            }
-            if (ItemMenu["hydra"].Cast<CheckBox>().CurrentValue)
-            {
-                if (hydra.IsOwned() && hydra.IsReady() && hydra.IsInRange(itemen))
-                {
-                    hydra.Cast();
-                }
-            }
-            if (ItemMenu["youmuu"].Cast<CheckBox>().CurrentValue)
+                if (ItemMenu["youmuu"].Cast<CheckBox>().CurrentValue)
             {
                 if (Youmuu.IsOwned() && Youmuu.IsReady() && Youmuu.IsInRange(itemen))
                 {
