@@ -1,0 +1,10 @@
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\obj\Release\Kassa.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\obj\Release\Kassa.pdb
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\Kassa.exe.config
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\Kassa.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\Kassa.pdb
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\EloBuddy.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\EloBuddy.SDK.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\SharpDX.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Release\Newtonsoft.Json.dll

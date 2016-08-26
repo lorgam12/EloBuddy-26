@@ -1,0 +1,13 @@
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\obj\Debug\Kassadino.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\obj\Debug\Kassa.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\obj\Debug\Kassa.pdb
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Kassa.exe.config
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Kassa.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Kassa.pdb
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Kassa.exe.CodeAnalysisLog.xml
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Kassa.exe.lastcodeanalysissucceeded
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\EloBuddy.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\EloBuddy.SDK.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\SharpDX.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\SharpDX.Direct3D9.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\Kassa\Kassa\bin\Debug\Newtonsoft.Json.dll
