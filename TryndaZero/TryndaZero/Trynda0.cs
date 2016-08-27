@@ -240,7 +240,7 @@ namespace Trynda0
             }
 
 
-            AutoPot();
+            
 
 
 
@@ -292,6 +292,8 @@ namespace Trynda0
                 JungleClear();
             }
 
+
+            AutoPot();
 
 
             if (SkinChangerMenu["EnableSkin"].Cast<CheckBox>().CurrentValue)
