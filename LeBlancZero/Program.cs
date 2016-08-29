@@ -214,7 +214,7 @@ namespace LBZero
             {
                 if (!Q.IsReady())
                 {
-                    Circle.Draw(Color.Black, Q.Range, ObjectManager.Player.Position);
+                    return;
                 }
             }
 
@@ -232,7 +232,7 @@ namespace LBZero
             {
                 if (!W.IsReady())
                 {
-                    Circle.Draw(Color.DarkSlateBlue, W.Range, ObjectManager.Player.Position);
+                    return;
                 }
             }
 
@@ -250,7 +250,7 @@ namespace LBZero
             {
                 if (!E.IsReady())
                 {
-                    Circle.Draw(Color.DarkRed, E.Range, ObjectManager.Player.Position);
+                    return;
                 }
             }
 
@@ -268,11 +268,11 @@ namespace LBZero
                 return;
             }
 
-            //if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
-            //{
-            //    Combo();
-            //    UltCombos();  
-            //}
+            if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
+            {
+               // Combo();
+                UltCombos();
+            }
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
             {
@@ -341,27 +341,21 @@ namespace LBZero
 
 
 
-        //    if (ComboMenu["Rcombos"].Cast<ComboBox>().CurrentValue )
+
+        //    if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target))
         //    {
-        //        if (target == null)
-        //        {
-        //            return;
-        //        }
-
-        //        if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target))
-        //        {
-        //            Q.Cast(target);
-        //        }
-
+        //        Q.Cast(target);
         //    }
-
-
-
 
         //}
 
 
-        private static void QRCombo()
+
+
+    
+
+
+    private static void QRCombo()
         {
             var target = TargetSelector.GetTarget(E.Range, DamageType.Magical);
             if(Player.Instance.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlideReturn" && !W.IsReady())
