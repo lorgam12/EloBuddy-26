@@ -1,0 +1,11 @@
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\LeBlancZero.exe.config
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\LeBlancZero.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\LeBlancZero.pdb
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\EloBuddy.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\EloBuddy.SDK.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\SharpDX.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\SharpDX.Direct3D9.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\bin\Release\Newtonsoft.Json.dll
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\obj\Release\LeBlancZero.csprojResolveAssemblyReference.cache
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\obj\Release\LeBlancZero.exe
+C:\Users\PC\Documents\Visual Studio 2015\Projects\LeBlancZero\LeBlancZero\obj\Release\LeBlancZero.pdb
