@@ -270,8 +270,8 @@ namespace LBZero
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Combo))
             {
-               // Combo();
-                UltCombos();
+                Combo();
+                
             }
 
             if (Orbwalker.ActiveModesFlags.HasFlag(Orbwalker.ActiveModes.Flee))
@@ -311,8 +311,17 @@ namespace LBZero
 
         private static int CurrentSkinID;
 
-        private static void UltCombos()
+    
+        
+
+
+
+
+        private static void Combo()
         {
+
+            var target = TargetSelector.GetTarget(E.Range, DamageType.Magical);
+
             switch (ComboMenu["Rcombos"].Cast<ComboBox>().SelectedIndex)
             {
 
@@ -330,32 +339,20 @@ namespace LBZero
 
             }
 
+                    if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target))
+            {
+                Q.Cast(target);
+            }
 
         }
 
 
-        //private static void Combo()
-        //{
-
-        //    var target = TargetSelector.GetTarget(E.Range, DamageType.Magical);
 
 
 
 
-        //    if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target))
-        //    {
-        //        Q.Cast(target);
-        //    }
 
-        //}
-
-
-
-
-    
-
-
-    private static void QRCombo()
+        private static void QRCombo()
         {
             var target = TargetSelector.GetTarget(E.Range, DamageType.Magical);
             if(Player.Instance.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlideReturn" && !W.IsReady())
