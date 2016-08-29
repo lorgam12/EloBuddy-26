@@ -364,24 +364,49 @@ namespace LBZero
         private static void QRCombo()
         {
             var target = TargetSelector.GetTarget(E.Range, DamageType.Magical);
-            if(target == null)
+            if(Player.Instance.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlideReturn" && !W.IsReady())
             {
-                return;
+                if(target == null)
+                {
+                    return;
+                }
+
+                if(ComboMenu["E"].Cast<CheckBox>().CurrentValue && E.IsReady() && E.IsInRange(target))
+                {
+                    E.Cast(target);
+                }
+
+            }
+            else if(!Q.IsReady() && !QUlti.IsReady())
+            {
+                if(target == null)
+                {
+                    return;
+                }
+                if(ComboMenu["W"].Cast<CheckBox>().CurrentValue && W.IsReady() && Player.Instance.Spellbook.GetSpell(SpellSlot.W).Name == "LeblancSlide" && Qmarked(target))
+                {
+                    W.Cast(target);
+                }
+           
+                        
             }
 
-
-
-
-            if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target) && ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
+            else
+            {
+                if (target == null)
+                {
+                    return;
+                }
+                if (target.IsValidTarget() && Q.IsReady() && Q.IsInRange(target) && ComboMenu["Q"].Cast<CheckBox>().CurrentValue)
                 {
                     Q.Cast(target);
                 }
 
-            if (target.IsValidTarget() && !Q.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && R.IsReady() && R.IsInRange(target) && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancChaosOrbm")
+                if (target.IsValidTarget() && !Q.IsReady() && ComboMenu["R"].Cast<CheckBox>().CurrentValue && QUlti.IsReady() && QUlti.IsInRange(target) && Player.Instance.Spellbook.GetSpell(SpellSlot.R).Name == "LeblancChaosOrbm")
                 {
-                    R.Cast(target);
-                }    
-
+                    QUlti.Cast(target);
+                }
+            }
         }
 
 
